@@ -7,6 +7,8 @@ var cors = require('cors')
 var socketIO = require('socket.io');
 var http = require('http')
 
+const port = process.env.PORT || 3000;
+
 
 var { validarToken, validarDireccionEquipo } = require("@middleware/autenticacion");
 var endpoints = require('@routes/endpoints');
@@ -21,7 +23,7 @@ app.use(expressValidator());
 
 var allowedOrigins = ['http://localhost:4200'];
 app.use(cors({
-    origin: function (origin, callback) {
+    origin: function(origin, callback) {
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) {
             var msg = 'el CORS policy for this site does not ' +
@@ -31,10 +33,11 @@ app.use(cors({
         return callback(null, true);
     }
 }));
-
+app.use(express.static(__dirname + "/public"));
 endpoints(app); // Carga todas las rutas
 
+
 const server = http.createServer(app);
-server.listen(3000, function () {
-    console.log("Node server cargando en:  http://localhost:3000");
-}); 
+server.listen(port, function() {
+    console.log(`Node server cargando en:  http://localhost:${port}`);
+});
