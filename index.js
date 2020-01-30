@@ -10,14 +10,14 @@ var http = require('http')
 const port = process.env.PORT || 3000;
 
 
-var { validarToken, validarDireccionEquipo } = require("@middleware/autenticacion");
-var endpoints = require('@routes/endpoints');
+//var { validarToken, validarDireccionEquipo } = require("@middleware/autenticacion");
+//var endpoints = require('@routes/endpoints');
 //var swaggerDoc = require('@root/swaggerDoc');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(validarToken);
-app.use(validarDireccionEquipo);
+//app.use(validarToken);
+//app.use(validarDireccionEquipo);
 app.use(expressValidator());
 
 
@@ -34,7 +34,7 @@ app.use(cors({
     }
 }));
 app.use(express.static(__dirname + "/public"));
-endpoints(app); // Carga todas las rutas
+//endpoints(app); // Carga todas las rutas
 
 
 const server = http.createServer(app);
