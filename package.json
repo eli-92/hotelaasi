@@ -1,0 +1,32 @@
+{
+  "name": "siho",
+  "version": "1.0.0",
+  "description": "Hotel",
+  "main": "index.js",
+  "_moduleAliases": {
+    "@routes": "routes",
+    "@middleware": "middleware",
+    "@controllers": "controllers",
+    "@models": "models",
+    "@root": "./"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eli",
+  "license": "ISC",
+  "dependencies": {
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "mssql": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {}
+}
