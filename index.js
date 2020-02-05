@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 
 
-var allowedOrigins = ['http://localhost:4200'];
+var allowedOrigins = ['http://localhost:3000'];
 app.use(cors({
     origin: function(origin, callback) {
         if (!origin) return callback(null, true);
